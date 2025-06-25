@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: boss-life-backend
+    env: node
+    buildCommand: "npm install"
+    startCommand: "node index.js"
+    rootDir: backend
+    envVars:
+      - key: PASSCODE
+        value: bossmoderide
+
+  - type: web
+    name: boss-life-frontend
+    env: static
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: dist
+    rootDir: .
